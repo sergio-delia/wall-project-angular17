@@ -9,3 +9,11 @@
   width: 300px;
   max-width: 300px;
 }
+
+.lista-mattoncini .mattone:nth-child(11n+1) {
+  margin-left: 160px;
+}
+
+.lista-mattoncini .mattone:nth-child(11n+5) {
+  margin-right: 160px;
+}
