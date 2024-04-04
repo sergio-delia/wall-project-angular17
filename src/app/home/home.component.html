@@ -1,0 +1,21 @@
+<div class="mattoncino" *ngFor="let nome of nomi; let i = index" [ngStyle]="{ 'background-color': colors[i % colors.length] }">{{ nome }}</div>
+<input type="text" #nomeInput>
+<button (click)="aggiungiNome(nomeInput.value)">Aggiungi nome</button>
+
+
+<div class="lista-mattoncini">
+  <div class="mattone" *ngFor="let user of user$ | async" [ngStyle]="{'background-color': user.color}">
+    {{ user.name }}
+  </div>
+</div>
+
+<div class="container">
+  <h1> add user </h1>
+  <form (ngSubmit)="addUser(name, color)">
+      <p> name </p>
+      <input name="name" [(ngModel)]="name">
+      <p> color </p>
+      <input name="color" [(ngModel)]="color">
+      <button type="submit"> submit </button>
+  </form>
+</div>

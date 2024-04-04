@@ -1,0 +1,11 @@
+.lista-mattoncini{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.mattone{
+  width: 300px;
+  max-width: 300px;
+}
