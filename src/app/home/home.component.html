@@ -3,11 +3,23 @@
 <button (click)="aggiungiNome(nomeInput.value)">Aggiungi nome</button>
 
 
+
+
+<hr>
+
 <div class="lista-mattoncini">
   <div class="mattone" *ngFor="let user of user$ | async" [ngStyle]="{'background-color': user.color}">
-    {{ user.name }}
+    <span class="span-name">{{ user.name }}</span>
+      <div class="example-button-delete" *ngIf="deleteMode">
+        <button (click)="deleteUser(user.id)" mat-mini-fab matTooltip="Warn" class="button-delete" color="warn" aria-label="Example mini fab with a heart icon">
+          <mat-icon class="icona-delete">delete</mat-icon>
+        </button>
+      </div>
   </div>
 </div>
+
+
+
 
 <div class="container">
   <h1> add user </h1>
@@ -18,4 +30,14 @@
       <input name="color" [(ngModel)]="color">
       <button type="submit"> submit </button>
   </form>
+
+  <section class="example-section">
+    <mat-slide-toggle
+        class="toggle-delete"
+        [(ngModel)]="deleteMode"
+        color="ok">
+    </mat-slide-toggle>
+    Delete mode is: {{deleteMode}}
+  </section>
+
 </div>
